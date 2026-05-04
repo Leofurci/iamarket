@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA-Market - Lista compartida</title>
+  <script>
+    // Obtener el ID de la lista de la URL
+    var params = new URLSearchParams(window.location.search);
+    var listaId = params.get('id');
+
+    // Intentar abrir la app con el deep link
+    if (listaId) {
+      window.location = 'iamarket://lista?id=' + listaId;
+    }
+
+    // Si no tiene la app, redirigir al Play Store después de 2 segundos
+    setTimeout(function() {
+      window.location = 'https://play.google.com/store/apps/details?id=com.iamarket.lista_compras5';
+    }, 2000);
+  </script>
+</head>
+<body>
+  <div style="font-family:sans-serif;text-align:center;padding:40px;">
+    <h2>🛒 IA-Market</h2>
+    <p>Abriendo la lista compartida...</p>
+    <p style="color:#888;font-size:14px;">Si no tenés IA-Market instalado, te llevamos al Play Store.</p>
+  </div>
+</body>
+</html>
